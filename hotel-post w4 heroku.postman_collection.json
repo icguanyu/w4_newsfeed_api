@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "213ed449-a0cd-4270-89e6-577de9db93b7",
+		"name": "hotel/post w4 heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "取得所有post",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://radiant-brook-10170.herokuapp.com/post?timeSort=desc",
+					"protocol": "https",
+					"host": [
+						"radiant-brook-10170",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "timeSort",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新增post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user\": \"626e1d09c57b189186b73e80\",\r\n    \"content\": \"John 新增一筆資料! 1\",\r\n    \"type\": \"3c\",\r\n    \"tags\": [\"iphone\",\"電池\"],\r\n    \"image\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://radiant-brook-10170.herokuapp.com/post",
+					"protocol": "https",
+					"host": [
+						"radiant-brook-10170",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"post"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "'test'",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯post",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"content\": \"新內容123456789\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://radiant-brook-10170.herokuapp.com/post/626e2f6aedaaea248e19d179",
+					"protocol": "https",
+					"host": [
+						"radiant-brook-10170",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"post",
+						"626e2f6aedaaea248e19d179"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除單筆post",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://radiant-brook-10170.herokuapp.com/post/626e3a0ae9c151611560c3ec",
+					"protocol": "https",
+					"host": [
+						"radiant-brook-10170",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"post",
+						"626e3a0ae9c151611560c3ec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "對單一post按讚",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"626e1d09c57b1891b3e80\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://radiant-brook-10170.herokuapp.com/post/626e2f6aedaaea248e19d179/like",
+					"protocol": "https",
+					"host": [
+						"radiant-brook-10170",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"post",
+						"626e2f6aedaaea248e19d179",
+						"like"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
