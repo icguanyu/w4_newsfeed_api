@@ -148,6 +148,26 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "取得所有使用者",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://radiant-brook-10170.herokuapp.com/user",
+					"protocol": "https",
+					"host": [
+						"radiant-brook-10170",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

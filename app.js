@@ -1,26 +1,16 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors = require('cors')
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const cors = require('cors')
 
-const mongoose = require('mongoose');
-const dotenv = require('dotenv')
-dotenv.config({ path: './config.env' })
+const indexRouter = require('./routes/index');
+const postsRouter = require('./routes/posts');
+const userRouter = require('./routes/user');
 
-const DB = process.env.DATABASE.replace(
-  '<password>',
-  process.env.DATABASE_PASSWORD
-)
+require('./connection')
 
-mongoose.connect(DB).then(() => {
-  console.log('DB Connect Success!');
-});
-
-var indexRouter = require('./routes/index');
-var postsRouter = require('./routes/posts');
-
-var app = express();
+const app = express();
 
 app.use(cors())
 app.use(logger('dev'));
@@ -31,5 +21,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/post', postsRouter);
+app.use('/user', userRouter)
 
 module.exports = app;
